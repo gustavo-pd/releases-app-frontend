@@ -54,7 +54,7 @@ export default function Releases() {
   }
 
   const validateUser = () => {
-    postReleases(newRelease)
+    postReleases(newRelease);
   };
 
   return (
