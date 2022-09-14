@@ -40,6 +40,7 @@ export default function Values() {
   return (
     <div className="page-main">
       <Header />
+      <h3 className="title">Filtrar valores por data</h3>
       <form className="form2-container">
         <label htmlFor="date" className="legend">
           <p className="label">data inicial</p>
