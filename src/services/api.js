@@ -1,8 +1,8 @@
 const axios = require('axios').default;
 
-const URL = 'http://localhost:3001/releases';
+const URL = 'https://releases-app-backend.herokuapp.com/releases';
 
-const URL2 = 'http://localhost:3001/values';
+const URL2 = 'https://releases-app-backend.herokuapp.com/values';
 
 const getReleases = async () => {
   try {
