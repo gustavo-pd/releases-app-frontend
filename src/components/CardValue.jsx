@@ -7,8 +7,14 @@ export default function CardValue({ data }) {
 
   return (
     <div className="card" id={ id }>
-      <p className="p-card">{ installmentValue }</p>
-      <p className="p-card">{ installmentDate }</p>
+      <div className="container-labels">
+        <p className="label-cards">valor</p>
+        <p className="p-card">{ installmentValue }</p>
+      </div>
+      <div className="container-labels">
+        <p className="label-cards">data</p>
+        <p className="p-card">{ installmentDate }</p>
+      </div>
     </div>
   );
 }

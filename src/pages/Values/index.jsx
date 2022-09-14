@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import MainContext from '../../store/Context';
 import CardValue from '../../components/CardValue';
 import './Values.css';
+import Header from '../../components/Header';
 
 export default function Values() {
   const { filters, dataReleases, setFilters } = useContext(MainContext);
@@ -38,6 +39,7 @@ export default function Values() {
 
   return (
     <div className="page-main">
+      <Header />
       <form className="form2-container">
         <label htmlFor="date" className="legend">
           <p className="label">data inicial</p>

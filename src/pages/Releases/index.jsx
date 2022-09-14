@@ -32,9 +32,9 @@ export default function Releases() {
 
   const MIN_DATE = 10;
   const MIN_NAME = 5;
-  const disableButton = newRelease.name.length >= MIN_NAME && typeof newRelease.name === 'string'
-    && newRelease.totalValue.length >= 1 && typeof newRelease.totalValue === 'number'
-    && newRelease.installments.length >= 1 && typeof newRelease.installments === 'number'
+  const disableButton = newRelease.name.length >= MIN_NAME
+    && newRelease.totalValue.length >= 1
+    && newRelease.installments.length >= 1
     && newRelease.releaseDate.length >= MIN_DATE;
 
   useEffect(() => {
@@ -94,7 +94,7 @@ export default function Releases() {
             />
           </label>
           <label htmlFor="date" className="legenda">
-            <p className="label">data</p>
+            <p className="label">data inicial</p>
             <input
               type="date"
               placeholder="2022-08-28"

@@ -14,10 +14,22 @@ export default function CardRelease({ data }) {
 
   return (
     <div className="cardRelease" id={ id }>
-      <p className="p-name">{ name }</p>
-      <p className="p-card">{ totalValue }</p>
-      <p className="p-card">{ installments }</p>
-      <p className="p-card">{ releaseDate }</p>
+      <div className="container-labels">
+        <p className="label-cards">nome</p>
+        <p className="p-name">{ name }</p>
+      </div>
+      <div className="container-labels">
+        <p className="label-cards">valor</p>
+        <p className="p-card">{ totalValue }</p>
+      </div>
+      <div className="container-labels">
+        <p className="label-cards">parcelas</p>
+        <p className="p-card">{ installments }</p>
+      </div>
+      <div className="container-labels">
+        <p className="label-cards">data</p>
+        <p className="p-card">{ releaseDate }</p>
+      </div>
       <button
         className="p-status"
         type="button"
