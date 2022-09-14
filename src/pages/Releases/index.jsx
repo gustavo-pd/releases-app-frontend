@@ -11,7 +11,7 @@ export default function Releases() {
     totalValue: '',
     installments: '',
     releaseDate: '',
-    status: 'Not paid',
+    paid: false,
   });
 
   const handleName = ({ target }) => setNewRelease(
@@ -31,7 +31,7 @@ export default function Releases() {
   );
 
   const MIN_DATE = 10;
-  const MIN_NAME = 5;
+  const MIN_NAME = 4;
   const disableButton = newRelease.name.length >= MIN_NAME
     && newRelease.totalValue.length >= 1
     && newRelease.installments.length >= 1
@@ -40,7 +40,6 @@ export default function Releases() {
   useEffect(() => {
     const getAllReleases = async () => {
       const resolve = await getReleases();
-      console.log(resolve);
       setData(resolve.data);
     };
     getAllReleases();
@@ -56,7 +55,6 @@ export default function Releases() {
 
   const validateUser = () => {
     postReleases(newRelease)
-      .then((v) => setStatusCode(v));
   };
 
   return (
@@ -117,12 +115,13 @@ export default function Releases() {
           <CardRelease key={ data.id } data={ release } />
         ))}
       </div>
-      <div className="finalpadding">
-        <div className="total-value">
-          <p>Valor total</p>
-          <p>{ `R$ ${totalValue(data)}` }</p>
+      <footer className="footer">
+        <div className="finalpadding">
+          <div className="total-value">
+            <p>{ `Valor total: R$ ${totalValue(data)}` }</p>
+          </div>
         </div>
-      </div>
+      </footer>
     </>
   );
 }

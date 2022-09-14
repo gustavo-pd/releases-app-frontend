@@ -9,7 +9,6 @@ function MainProvider({ children }) {
 
   const getAllValues = async () => {
     const resolve = await getValues();
-    console.log(resolve);
     setDataReleases(resolve.data);
   };
 

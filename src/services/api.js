@@ -1,8 +1,8 @@
 const axios = require('axios').default;
 
-const URL = 'https://releases-app-backend.herokuapp.com/releases';
+const URL = 'http://localhost:3001/releases';
 
-const URL2 = 'https://releases-app-backend.herokuapp.com/values';
+const URL2 = 'http://localhost:3001/values';
 
 const getReleases = async () => {
   try {
@@ -13,10 +13,10 @@ const getReleases = async () => {
   }
 };
 
-const postReleases = async ({ name, totalValue, installments, releaseDate, status }) => {
+const postReleases = async ({ name, totalValue, installments, releaseDate, paid }) => {
   try {
     const result = await axios.post(
-      `${URL}`, { name, totalValue, installments, releaseDate, status },
+      `${URL}`, { name, totalValue, installments, releaseDate, paid },
     );
     return result.status;
   } catch (e) {
@@ -26,10 +26,8 @@ const postReleases = async ({ name, totalValue, installments, releaseDate, statu
 
 const changeStatus = async (id) => {
   try {
-    const statusS = 'Paid';
     const result = await axios.put(
-      `${URL}/:${id}`,
-      statusS,
+      `${URL}/status/${id}`,
     );
     return result.status;
   } catch (e) {

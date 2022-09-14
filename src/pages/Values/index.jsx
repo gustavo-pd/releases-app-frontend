@@ -72,10 +72,13 @@ export default function Values() {
           <CardValue key={ value.id } data={ value } />
         ))}
       </div>
-      <div className="total-values">
-        <p>Valor total</p>
-        <p>{ `R$ ${totalValue(filters)}` }</p>
-      </div>
+      <footer className="footer">
+        <div className="finalpadding">
+          <div className="total-value">
+            <p>{ `Valor total: R$ ${totalValue(filters)}` }</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
