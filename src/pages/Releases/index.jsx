@@ -48,7 +48,7 @@ export default function Releases() {
   function totalValue(release) {
     let som = 0;
     for (let i = 0; i < release.length; i += 1) {
-      som += parseInt(release[i].totalValue, 10);
+      som += parseFloat(release[i].totalValue);
     }
     return som.toFixed(2);
   }

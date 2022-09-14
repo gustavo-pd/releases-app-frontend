@@ -14,7 +14,7 @@ export default function Values() {
   function totalValue(release) {
     let som = 0;
     for (let i = 0; i < release.length; i += 1) {
-      som += parseInt(release[i].installmentValue, 10);
+      som += parseFloat(release[i].installmentValue);
     }
     return som.toFixed(2);
   }
